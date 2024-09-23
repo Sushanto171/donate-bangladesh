@@ -43,7 +43,7 @@
             <!-- medium device -->
             <div class="hidden  md:flex justify-start items-center">
                 <div class=" md:block tooltip tooltip-bottom" data-tip="Home">
-                    <button id="" class="downUp font-semibold px-4 py-2 rounded-md bg-primary shadow">Home</button>
+                    <button class="home-button downUp font-semibold px-4 py-2 rounded-md bg-primary shadow">Home</button>
                 </div>
             </div>
             <!-- nav middle -->
@@ -51,12 +51,13 @@
                 <!-- menu icon -->
                 <div class=" md:hidden relative">
                     <div class="tooltip tooltip-bottom" data-tip="Menu">
-                        <button id="mobile-icon" class="downUp bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
+                        <button id="mobile-icon"
+                            class="downUp bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
                                 class="fa-solid fa-bars text-xl "></i></button>
                     </div>
                     <div id="mobile-menu" class="absolute top-16 hidden">
                         <ul class="bg-navBgColor shadow-lg">
-                            <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
+                            <li class="home-button p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
                                     href="#">Home</a></li>
                             <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
                                     href="#">Donation</a></li>
@@ -78,7 +79,7 @@
                 <!-- account balance -->
                 <div class="tooltip tooltip-bottom flex items-center gap-1" data-tip="Account Balance">
                     <img src="./assets/coin.png" alt="coin">
-                    <span>5500</span>
+                    <span id="blog-account">120000</span>
                     <span>BDT</span>
                 </div>
             </div>

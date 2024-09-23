@@ -48,12 +48,12 @@ function getInputAmount(id) {
     const inputValue = inputField.trim();
     const inputValueNumber = parseFloat(inputValue);
     // validation
-    if ( isNaN(inputValueNumber) === true || inputValueNumber <= 0) {
+    if (isNaN(inputValueNumber) === true || inputValueNumber <= 0) {
         alert('Invalid type number!');
         document.getElementById(id).value = '';
         return;
     }
-     if (inputValueNumber > balance) {
+    if (inputValueNumber > balance) {
         alert('You don\'t have enough money!');
         document.getElementById(id).value = '';
         return;
@@ -64,19 +64,43 @@ function getInputAmount(id) {
 
 // function for updated balance
 function updateContainerBalance(inputValidAmount, donatedBalanceContainer) {
-    if(typeof(inputValidAmount)=== 'number'){
-    // account balance
-    const balanceValue = document.getElementById('accountBalance').innerText;
-    const balance = parseFloat(balanceValue);
-    // account balance update
-    const updateBalance = balance - inputValidAmount;
-    document.getElementById('accountBalance').innerText = updateBalance;
+    if (typeof (inputValidAmount) === 'number') {
+        // account balance
+        const balanceValue = document.getElementById('accountBalance').innerText;
+        const balance = parseFloat(balanceValue);
+        // blog page account balance
+        const blogPageAccount = document.getElementById('blog-account');
+        // account balance update
+        const updateBalance = balance - inputValidAmount;
+        document.getElementById('accountBalance').innerText = updateBalance.toFixed(2);
+        // blogPageAccount.innerText = updateBalance;
 
+        // donated balance
+        const donatedBalance = donatedBalanceContainer.innerText;
+        const donatedBalanceNumber = parseFloat(donatedBalance);
+        const updateDonatedBalance = donatedBalanceNumber + inputValidAmount;
+        donatedBalanceContainer.innerText = updateDonatedBalance.toFixed(2);
+    }
+};
 
-    // donated balance
-    const donatedBalance = donatedBalanceContainer.innerText;
-    const donatedBalanceNumber = parseFloat(donatedBalance);
-    const updateDonatedBalance = donatedBalanceNumber + inputValidAmount;
-    donatedBalanceContainer.innerText = updateDonatedBalance
-}
+// history tab function
+let num = 0;
+function createDataForHistory(inputValidAmount, donationInfo) {
+    if (typeof (inputValidAmount) === 'number') {
+        num += 1;
+        const transaction = Math.random() * 10;
+        const date = new Date();
+        const donationTitle = donationInfo.innerText
+        const historyContainer = document.getElementById('history-container');
+        const div = document.createElement('div');
+        div.innerHTML = ` 
+                    <p class="w-7 h-7 p-2 bg-gray-300 rounded-sm flex justify-center items-center mb-1">${num}</p>
+                    <div class="border rounded-xl p-4 pl-8 space-y-5 shadow hover:shadow-md">
+                    <h4 class="font-semibold">${inputValidAmount.toFixed(2)} TK. ${donationTitle}</h4>
+                    <p class="text-sm">Transaction ID : ${transaction}</p>
+                    <p class="text-sm">Date : ${date.toLocaleString()}</p>
+                </div>
+    `
+        historyContainer.insertBefore(div, historyContainer.firstChild);
+    }
 }
