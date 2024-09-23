@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Donate Bangladesh</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind + daisyUI cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/63f1481430.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'rgba(180, 244, 97, 1)',
+                        secondary: 'rgba(17, 17, 17, 0.7)',
+                        navBgColor: 'rgba(249, 247, 243, 1)',
+                        modalShadow: 'rgba(180, 244, 97, 0.28)'
+                    },
+                    fontFamily: {
+                        Lexend: "Lexend",
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body class=" text-secondary font-Lexend">
+    <!-- nav  section start -->
+    <nav class="py-6 bg-navBgColor">
+        <div class="grid grid-cols-2 md:grid-cols-3 w-11/12 mx-auto">
+            <!-- medium device -->
+            <div class="hidden  md:flex justify-start items-center">
+                <div class=" md:block tooltip tooltip-bottom" data-tip="Home">
+                    <button class="font-semibold px-4 py-2 rounded-md bg-primary shadow">Home</button>
+                </div>
+            </div>
+            <!-- nav middle -->
+            <div class="flex items-center justify-start md:justify-center gap-2 cursor-pointer">
+                <!-- menu icon -->
+                <div class=" md:hidden relative">
+                    <div class="tooltip tooltip-bottom" data-tip="Menu">
+                        <button class="bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
+                                class="fa-solid fa-bars text-xl "></i></button>
+                    </div>
+                    <div class="absolute top-16 hidden">
+                        <ul class="bg-navBgColor shadow-lg">
+                            <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
+                                    href="#">Home</a></li>
+                            <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
+                                    href="#">Donation</a></li>
+                            <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
+                                    href="#">History</a></li>
+                            <li class="p-2   font-semibold w-full hover:bg-primary hover:text-white "><a
+                                    href="#">Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- donation logo -->
+                <div class="flex items-center gap-2 ">
+                    <img src="./assets/logo.png" alt="logo">
+                    <h3 class="font-extrabold text-lg">Donate Bangladesh</h3>
+                </div>
+            </div>
+            <!-- nav right  -->
+            <div class="flex items-center justify-end font-bold cursor-pointer ">
+                <!-- account balance -->
+                <div class="tooltip tooltip-bottom flex items-center gap-1" data-tip="Account Balance">
+                    <img src="./assets/coin.png" alt="coin">
+                    <span>5500</span>
+                    <span>BDT</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav  section end -->
+    <main class="w-11/12 mx-auto">
+        <div class="my-8 flex items-center gap-0">
+            <h1 class="text-3xl font-bold">Important FAQ ?</h1>
+            <div class="w-16 h-16 relative">
+                <img class="absolute -top-2" src="./assets/question-mark-72_256.gif" alt="" srcset="">
+            </div>
+        </div>
+        <div>
+            <div class="join join-vertical w-full">
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
