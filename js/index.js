@@ -24,20 +24,26 @@ historyButton.addEventListener('click', function(){
 
 document.getElementById('card-1-button').addEventListener('click',function(event){
     event.preventDefault();
-    const amount = getInputAmount('card-1-input', accountBalanceNumber);
-    console.log(amount);
+    const amount = getInputAmount('card-1-input');
+  console.log(amount)
+  const donatedContainer = document.getElementById('card-1-donated-balance');
+  updateContainerBalance(amount, donatedContainer)
 })
 // card-2
 
 document.getElementById('card-2-button').addEventListener('click',function(event){
     event.preventDefault();
-    const amount = getInputAmount('card-2-input', accountBalanceNumber);
-    console.log(amount);
+    const amount = getInputAmount('card-2-input');
+    console.log(amount)
+    const donatedContainer = document.getElementById('card-2-donated-balance');
+    updateContainerBalance(amount, donatedContainer)
 })
 // card-3
 
 document.getElementById('card-3-button').addEventListener('click',function(event){
     event.preventDefault();
-    const amount = getInputAmount('card-3-input', accountBalanceNumber);
-    console.log(amount);
+    const amount = getInputAmount('card-3-input');
+    console.log(amount)
+    const donatedContainer = document.getElementById('card-3-donated-balance');
+    updateContainerBalance(amount, donatedContainer)
 })
