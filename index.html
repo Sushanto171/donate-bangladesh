@@ -46,7 +46,7 @@
                     <!-- medium device -->
                     <div class="hidden  md:flex justify-start items-center">
                         <div class=" md:block tooltip tooltip-bottom" data-tip="Blog">
-                            <button class="font-semibold px-4 py-2 rounded-md bg-primary shadow">Blog</button>
+                            <button id="" class="downUp font-semibold px-4 py-2 rounded-md bg-primary shadow">Blog</button>
                         </div>
                     </div>
                     <!-- nav middle -->
@@ -54,10 +54,10 @@
                         <!-- menu icon -->
                         <div class=" md:hidden relative">
                             <div class="tooltip tooltip-bottom" data-tip="Menu">
-                                <button class="bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
+                                <button id="mobile-icon" class="downUp bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
                                         class="fa-solid fa-bars text-xl "></i></button>
                             </div>
-                            <div class="absolute top-16 hidden">
+                            <div id="mobile-menu" class="absolute top-16 hidden">
                                 <ul class="bg-navBgColor shadow-lg">
                                     <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white ">
                                         <a href="#">Blog</a>
@@ -84,7 +84,7 @@
                         <!-- account balance -->
                         <div class="tooltip tooltip-bottom flex items-center gap-1" data-tip="Account Balance">
                             <img src="./assets/coin.png" alt="coin">
-                            <span>5500</span>
+                            <span id="accountBalance">5500</span>
                             <span>BDT</span>
                         </div>
                     </div>
@@ -96,12 +96,12 @@
             <div class="flex justify-center gap-6 mt-8">
                 <!-- donation -->
                 <div>
-                    <button class="font-semibold px-4 py-2 rounded-md bg-primary  shadow">Donation</button>
+                    <button id="donate-button" class="downUp font-semibold px-4 py-2 border  rounded-md bg-primary  shadow">Donation</button>
                 </div>
                 <!-- history -->
                 <div>
-                    <button
-                        class="font-semibold px-4 py-2 rounded-md border border-gray-300 shadow bg-gray-200">History</button>
+                    <button id="history-button"
+                        class="downUp font-semibold px-4 py-2 rounded-md border  shadow bg-gray-200">History</button>
                 </div>
 
             </div>
@@ -113,7 +113,7 @@
 
 
         <!-- donation tab start -->
-        <div class="space-y-8 mt-1">
+        <div id="donate-tab" class="space-y-8 mt-1">
             <!-- card-1 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-4 border rounded-xl shadow hover:shadow-md">
                 <!-- left -->
@@ -135,12 +135,12 @@
                     </div>
                     <div class="mt-12">
                         <form action="">
-                            <input
+                            <input id="card-1-input"
                                 class="w-full px-4 py-2 border border-gray-300 bg-gray-100 shadow  rounded-lg focus:outline-offset-4 focus:outline-gray-300"
                                 type="text" placeholder="Write donation Amount...">
                             <br>
                             <br>
-                            <button class="w-full py-2 bg-primary rounded-lg font-semibold text-gray-700 shadow">Donate
+                            <button id="card-1-button" class="downUp w-full py-2 bg-primary rounded-lg font-semibold text-gray-700 shadow">Donate
                                 Now</button>
                         </form>
                     </div>
@@ -168,12 +168,12 @@
                     </div>
                     <div class="mt-12">
                         <form action="">
-                            <input
+                            <input id="card-2-input"
                                 class="w-full px-4 py-2 border border-gray-300 bg-gray-100 shadow  rounded-lg focus:outline-offset-4 focus:outline-gray-300 "
                                 type="text" placeholder="Write donation Amount...">
                             <br>
                             <br>
-                            <button class="w-full py-2 bg-primary rounded-lg font-semibold text-gray-800 shadow">Donate
+                            <button id="card-2-button" class="downUp w-full py-2 bg-primary rounded-lg font-semibold text-gray-800 shadow">Donate
                                 Now</button>
                         </form>
                     </div>
@@ -201,12 +201,12 @@
                     </div>
                     <div class="mt-12">
                         <form action="">
-                            <input
+                            <input id="card-3-input"
                                 class="w-full px-4 py-2 border border-gray-300 bg-gray-100 shadow  focus:outline-offset-4 focus:outline-gray-300 rounded-lg"
                                 type="text" placeholder="Write donation Amount...">
                             <br>
                             <br>
-                            <button class="w-full py-2 bg-primary rounded-lg font-semibold text-gray-800 shadow">Donate
+                            <button id="card-3-button" class="downUp w-full py-2 bg-primary rounded-lg font-semibold text-gray-800 shadow">Donate
                                 Now</button>
                         </form>
                     </div>
@@ -216,7 +216,7 @@
         <!-- donation tab end -->
 
         <!-- history tab start -->
-        <div>
+        <div id="history-tab">
             <!-- history container -->
             <div id="history-container" class="space-y-5 my-5 ">
 
@@ -246,7 +246,7 @@
     </main>
     <!-- main section end -->
     <!-- modal start -->
-    <div class="bg-modalShadow py-20">
+    <div  id="modal-tab" class="bg-modalShadow py-20">
         <div class="bg-white rounded-3xl text-center p-10 w-10/12 md:w-6/12 mx-auto">
             <h2 class="text-3xl font-bold text-gray-800">Congrates!</h2>
             <div class="flex justify-center my-6">
@@ -254,7 +254,7 @@
             </div>
             <p class="capitalize">You Have donated for humankind</p>
             <h3 class="text-2xl font-semibold text-gray-800  my-4">Successfully</h3>
-            <button class="px-4 py-2 bg-gray-300 rounded-md font-bold mt-4 shadow hover:shadow-md">Close
+            <button class="downUp px-4 py-2 bg-gray-300 rounded-md font-bold mt-4 shadow hover:shadow-md">Close
                 confirmation</button>
         </div>
     </div>

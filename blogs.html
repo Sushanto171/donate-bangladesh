@@ -43,7 +43,7 @@
             <!-- medium device -->
             <div class="hidden  md:flex justify-start items-center">
                 <div class=" md:block tooltip tooltip-bottom" data-tip="Home">
-                    <button class="font-semibold px-4 py-2 rounded-md bg-primary shadow">Home</button>
+                    <button id="" class="downUp font-semibold px-4 py-2 rounded-md bg-primary shadow">Home</button>
                 </div>
             </div>
             <!-- nav middle -->
@@ -51,10 +51,10 @@
                 <!-- menu icon -->
                 <div class=" md:hidden relative">
                     <div class="tooltip tooltip-bottom" data-tip="Menu">
-                        <button class="bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
+                        <button id="mobile-icon" class="downUp bg-white p-1 w-9 h-9 flex items-center justify-center rounded-full"><i
                                 class="fa-solid fa-bars text-xl "></i></button>
                     </div>
-                    <div class="absolute top-16 hidden">
+                    <div id="mobile-menu" class="absolute top-16 hidden">
                         <ul class="bg-navBgColor shadow-lg">
                             <li class="p-2 border-b-2  font-semibold w-full hover:bg-primary hover:text-white "><a
                                     href="#">Home</a></li>
@@ -118,6 +118,9 @@
             </div>
         </div>
     </main>
+
+    <script src="./js/utilities.js"></script>
+    <script src="./js/blog.js"></script>
 </body>
 
 </html>
