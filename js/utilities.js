@@ -20,7 +20,6 @@ function showTab(id) {
     document.getElementById('mobile-menu').classList.add('hidden');
     document.getElementById('donate-tab').classList.add('hidden');
     document.getElementById('history-tab').classList.add('hidden');
-    document.getElementById('modal-tab').classList.add('hidden');
     tab.classList.remove('hidden')
 }
 
@@ -102,5 +101,7 @@ function createDataForHistory(inputValidAmount, donationInfo) {
                 </div>
     `
         historyContainer.insertBefore(div, historyContainer.firstChild);
+        // modal
+        my_modal_1.showModal();
     }
 }
