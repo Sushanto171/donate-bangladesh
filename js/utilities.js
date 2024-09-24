@@ -38,7 +38,8 @@ mobileIcon.addEventListener('click', function () {
 
 // function for get input valid amount 
 
-function getInputAmount(id) {
+function getInputAmount(id, error) {
+    const pError =document.getElementById(error);
     // account balance
     const balanceValue = document.getElementById('accountBalance').innerText;
     const balance = parseFloat(balanceValue);
@@ -48,13 +49,19 @@ function getInputAmount(id) {
     const inputValueNumber = parseFloat(inputValue);
     // validation
     if (isNaN(inputValueNumber) === true || inputValueNumber <= 0) {
-        alert('Invalid type number!');
+        alert('⚠ Invalid type number!');
         document.getElementById(id).value = '';
+        pError.innerText = '⚠ Invalid type number!'
+       const p= pError.classList.remove('hidden');
+        console.log(p.classList)
         return;
     }
     if (inputValueNumber > balance) {
-        alert('You don\'t have enough money!');
+        alert('⚠ You don\'t have enough money!');
         document.getElementById(id).value = '';
+        pError.innerText = '⚠ Don\'t have enough money! Add more money than donate now.'
+        const p= pError.classList.remove('hidden');
+        console.log(p.classList)
         return;
     }
     document.getElementById(id).value = '';
@@ -68,7 +75,7 @@ function updateContainerBalance(inputValidAmount, donatedBalanceContainer) {
         const balanceValue = document.getElementById('accountBalance').innerText;
         const balance = parseFloat(balanceValue);
         // blog page account balance
-        const blogPageAccount = document.getElementById('blog-account');
+        // const blogPageAccount = document.getElementById('blog-account');
         // account balance update
         const updateBalance = balance - inputValidAmount;
         document.getElementById('accountBalance').innerText = updateBalance.toFixed(2);
@@ -95,7 +102,7 @@ function createDataForHistory(inputValidAmount, donationInfo) {
         div.innerHTML = ` 
                     <p class="w-7 h-7 p-2 bg-gray-300 rounded-sm flex justify-center items-center mb-1">${num}</p>
                     <div class="border rounded-xl p-4 pl-8 space-y-5 shadow hover:shadow-md">
-                    <h4 class="font-semibold">${inputValidAmount.toFixed(2)} TK. ${donationTitle}</h4>
+                    <h4 class="font-semibold">${inputValidAmount.toFixed(2)} TK. is Donated for ${donationTitle}</h4>
                     <p class="text-sm">Transaction ID : ${transaction}</p>
                     <p class="text-sm">Date : ${date.toLocaleString()}</p>
                 </div>
@@ -104,4 +111,24 @@ function createDataForHistory(inputValidAmount, donationInfo) {
         // modal
         my_modal_1.showModal();
     }
+}
+
+// input keyup
+function inputKeyUp(button, event){
+const inputValue =event.target.value
+
+if(inputValue.length >0){
+    document.getElementById(button).removeAttribute('disabled');
+    document.getElementById(button).classList.remove('cursor-not-allowed', 'bg-gray-300');
+    document.getElementById(button).classList.add('bg-primary');
+
+    return;
+}
+ else{
+    document.getElementById(button).setAttribute('disabled', true);
+    document.getElementById(button).classList.add('cursor-not-allowed', 'bg-gray-300');
+    document.getElementById(button).classList.remove('bg-primary');
+
+    return;
+}
 }
